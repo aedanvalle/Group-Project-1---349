@@ -1,0 +1,521 @@
+/************************************
+    Default styling (base values).
+************************************/
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+/* Variables */
+:root{
+    --mainColor: #2B303A;
+    --altColor: #F6F8FF;
+    --ctaColor: #23CE6B;
+    --color1: #F6F8FF;
+    --color2: #000505;
+    --color3: #2E2F2F;
+    --color4: #07393C;
+    --color5: #192A51;
+}
+
+html{
+    height: 100%;
+    font-size: 18px;
+    background: var(--mainColor);
+    color: var(--altColor);
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    font-size: 18px;
+    background: var(--mainColor);
+    color: var(--altColor);
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    margin: 10px 0px;
+}
+
+header h2{
+    color: var(--ctaColor);
+}
+
+main header{
+    margin: 25px 0px;
+}
+
+.wrapper{
+    width: 960px;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Top navigation bar */
+.top-nav{
+    background: var(--ctaColor);
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bottom-nav{
+    background: var(--mainColor);
+    color: var(--altColor);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 50px;
+}
+
+.top-nav .site-logo{
+    margin: 0px 20px;
+    padding: 5px;
+    text-decoration: none;
+    font-size: 2rem;
+    border: 2px solid var(--mainColor);
+    color: var(--mainColor);
+    font-weight: 500;
+}
+
+.top-nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    list-style-type: none;
+}
+
+.top-nav ul li{
+    margin: 0px 10px;
+}
+
+.top-nav ul li a{
+    color: var(--mainColor);
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+/* Landing page */
+.bg-img{
+    width: 100vw;
+    height: 45vh;
+    background-image: url('../img/landing-page/bg-img.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.landing-page-cta header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+}
+
+.landing-page-cta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-page-cta button{
+    width: 350px;
+    height: 50px;
+    padding: 10px;
+    border: none;
+    background: var(--ctaColor);
+    border-radius: 5px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.landing-page-menu{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    color: var(--mainColor);
+    margin-bottom: 25px;
+}
+
+.landing-page h2{
+    font-size: 1rem;
+}
+
+.landing-page-menu .personal-business-cards, .landing-page-menu .teacher-business-cards, 
+.landing-page-menu .lawyer-business-cards, .landing-page-menu .realtor-business-cards{
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    background: var(--altColor);
+    width: 500px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.landing-page-menu .thumbnail{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 0px 0px 10px;
+}
+
+/* Thumbnail images on landing page */
+.landing-page-menu .teacher-business-cards .thumbnail{
+    background-image: url('../img/landing-page/thumbnail-teacher.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.landing-page-menu .personal-business-cards .thumbnail{
+    background-image: url('../img/landing-page/thumbnail-personal.jpg');
+    background-position-x: center;
+    background-position-y: -50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.landing-page-menu .lawyer-business-cards .thumbnail{
+    background-image: url('../img/landing-page/thumbnail-lawyer.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.landing-page-menu .realtor-business-cards .thumbnail{
+    background-image: url('../img/landing-page/thumbnail-realtor.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.landing-page-menu .description{
+    padding: 10px;
+}
+
+/* Center the business card horzontally and vertically. */
+.center-business-card{
+    display: flex;           
+    flex-direction: column;  
+    justify-content: center;
+    align-items: center;
+}
+
+/* Default layout of business card (template one) */
+.business-card{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 900px;
+    height: 450px;
+    border: 2px solid black;
+    margin: 5px 0px;
+    background-color: var(--color1);
+    color: var(--color2);
+    font-size: 1.2rem;
+}
+
+.business-card .left-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.business-card .img-container{
+    width: 450px;
+    height: 300px;
+    background-image: url("../img/storefront-1.jpg");
+}
+
+.business-card .right-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 1px solid black;
+    height: 75%;
+    margin: auto 0px;
+}
+
+.business-card .right-column > div{
+    position: relative;
+    left: 25px;
+}
+
+.business-card .right-column .top-content, .business-card .right-column .middle-content, .business-card .right-column .bottom-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    height: 100px;
+    padding: 10px;
+}
+
+.business-card .left-column{
+    padding: 10px;
+}
+
+.business-card .right-column{
+    padding: 10px;
+}
+
+/* Business card form (user input) */
+.form-container{
+    display: grid;
+    grid-template-areas: 
+        "a b c c"
+        "d e f g"
+        "h i i j";
+    gap: 25px;
+    padding: 15px;
+}
+
+.form-container .company{
+    grid-area: a;
+}
+
+.form-container .name{
+    grid-area: b;
+}
+
+.form-container .address{
+    grid-area: c;
+}
+
+.form-container .email{
+    grid-area: i;
+}
+
+.form-container .phone{
+    grid-area: d;
+}
+
+.form-container .title{
+    grid-area: e;
+}
+
+.form-container .city{
+    grid-area: f;
+}
+
+.form-container .state{
+    grid-area: g;
+}
+
+.form-container .zip{
+    grid-area: j;
+}
+
+.form-container div{
+    display: block;
+    width: 100%;
+}
+
+.form-container input{
+    border: none;
+    height: 35px;
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 0px 5px;
+    font-size: 0.9rem;
+}
+
+/* Customization bar (template menu) */
+.customization-bar{
+    width: 100%;
+    height: 75px;
+    margin: 10px 0px;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    border: 1px dotted var(--altColor);
+}
+
+/* Fade templates that are not selected. */
+.customization-bar .templates .not-selected, .customization-bar .colors .not-selected{
+    opacity: 0.3;
+}
+
+/* Un-fade templates that are selected. */
+.customization-bar .templates div:hover, .customization-bar .colors div:hover{
+    cursor: pointer;
+    opacity: 1;
+}
+
+/* Position "Select Layout" and "Select Theme" */
+.customization-bar-header .title, .customization-bar-header .description{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/* Layout of templates bar. */
+.customization-bar .templates{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+}
+
+/* Layout of colors bar. */
+.customization-bar .colors{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+}
+
+/* Center content of the bars. */
+.customization-bar .templates > div, .customization-bar .colors > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+/* cta */
+.controls button{
+    width: 150px;
+    height: 50px;
+    padding: 10px;
+    border: none;
+    background: var(--ctaColor);
+    border-radius: 5px;
+    font-size: 1.5rem;
+}
+
+.controls{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 75%;
+    margin: 0px auto;
+    position: relative;
+    top: 25px;
+}
+
+/* Template two styling */
+.template-two{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    width: 900px;
+    height: 450px;
+    border: 2px solid black;
+    margin: 5px 0px;
+    background-color: var(--color1);
+    color: var(--color2);
+    font-size: 1.2rem;
+}
+
+.template-two .img-container{
+    width: 450px;
+    height: 300px;
+    background-image: url("../img/storefront-2.jpg");
+}
+
+.template-two .top-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+}
+
+.template-two .bottom-row{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 10px auto;
+    border-top: 2px dotted black;
+}
+
+.template-two .bottom-row .top-content, .template-two .bottom-row .middle-content, .template-two .bottom-row .bottom-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Themes */
+.theme-one{
+    background-color: var(--color1);
+    color: var(--color2);
+}
+
+.theme-two{
+    background-color: var(--color2);
+    color: var(--color1);
+}
+
+.theme-three{
+    background-color: var(--color3);
+    color: var(--color1);
+}
+
+.theme-four{
+    background-color: var(--color4);
+    color: var(--color1);
+}
+
+.theme-five{
+    background-color: var(--color5);
+    color: var(--color1);
+}
+
+/* Overlay that goes over main content 
+   when pop up window is active. */
+.modal {
+    display: none;
+    position: fixed; 
+    padding-top: 50px;
+    left: 0; 
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  /* Pop up window for the 
+     load button */
+  .modal-content {
+    position: relative; 
+    background-color: var(--mainColor);
+    padding: 20px; 
+    margin: auto; 
+    width: 25%;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+  }
+  /* Close button (top right corner) of 
+    pop up window */
+  .close-btn {
+    float: right; 
+    color: var(--altColor); 
+    font-size: 24px;  
+    font-weight: bold;
+  }
+  .close-btn:hover {
+    color: var(--altColor); 
+    cursor: pointer;
+  }
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }

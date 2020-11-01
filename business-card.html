@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Title of web page -->
+        <title>Business Card Generator</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/main.css">
+        <!-- Google fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+        <!-- Line awesome icons -->
+        <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+        <!-- CDNJS Script Links for Saving to PDF -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.js"></script>
+
+    </head>
+    <body> 
+        <!-- Main navigation -->
+        <nav class="top-nav">
+            <a class="site-logo" href="index.html">EzBiz</a>
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <main class="wrapper">
+            <header>
+                <h2>Your Business Card</h2>
+                <p>Here is a preview of your business card.</p>
+            </header>
+            <!-- Business card preview -->
+            <div class="center-business-card">
+                <div id="business-card-preview" class="business-card">
+                    <div id="left-column" class="left-column">
+                        <h2 id="label-company-name">Company name</h2>
+                        <!-- <div id="company-img" class="img-container"></div> -->
+                    </div>
+                    <div id="right-column" class="right-column">
+                        <div class="top-content">
+                            <h2 id="label-full-name">Full Name</h2>
+                            <p id="label-job-title">Job Title</p>
+                        </div>
+                        <div class="middle-content">
+                            <p id="label-street">Street</p>
+                            <div class="same-line" style="display: flex; flex-direction: row;">
+                                <p id="label-city" style="margin-right: 10px;">City,</p>
+                                <p id="label-state" style="margin-right: 10px;">State,</p>
+                                <p id="label-zip">Zip</p>
+                            </div>
+                        </div>
+                        <div class="bottom-content">
+                            <div class="same-line" style="display: flex; flex-direction: row; align-items: center;">
+                                <i class="las la-envelope-open-text" style="margin-right: 5px;"></i><p id="label-email">Mail</p>
+                            </div>
+                            <div class="same-line" style="display: flex; flex-direction: row; align-items: center;">
+                                <i class="las la-phone" style="margin-right: 5px;"></i><p id="label-phone">Phone</p>
+                            </div>
+                            <div class="same-line" style="display: flex; flex-direction: row; align-items: center;">
+                                <i class="las la-fax" style="margin-right: 5px;"></i><p id="label-fax">Fax</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Customization area -->
+            <header class="customization-bar-header">
+                <div class="title">
+                    <h2 class="h2-color-scheme">Select Layout</h2>
+                    <h2 class="h2-color-scheme">Select Theme</h2>
+                </div>
+                <div class="description">
+                    <p>Need help designing your business card? Try selecting one of our customization options here.</p>
+                </div>
+            </header>
+            <div class="customization-bar">
+                <div class="templates">
+                    <div id="template-one" class="preview-one selected">Layout 1</div>
+                    <div id="template-two" class=" preview-two not-selected">Layout 2</div>
+                </div>
+                <div class="colors">
+                    <div id="theme-1" class="selected">1</div>
+                    <div id="theme-2" class="not-selected">2</div>
+                    <div id="theme-3" class="not-selected">3</div>
+                    <div id="theme-4" class="not-selected">4</div>
+                    <div id="theme-5" class="not-selected">5</div>
+                </div>
+            </div> 
+            <!-- Input boxes -->
+            <header>
+                <h2 class="h2-details">Add Your Details</h2>
+                <p>Please provide the following:</p>
+            </header>
+            <form class="form-container">
+                <div class="company">
+                    <label for="cname">Company Name:</label>
+                    <input id="input-company-name" type="text" id ="cname" name="cname"></input>
+                </div>
+                <div class="name">
+                    <label for="fname">Full name:</label>
+                    <input id="input-full-name" class="fname" type="text" id ="fname" name="fname"></input>
+                </div>
+                <div class="address">
+                    <label for="fname">Street:</label>
+                    <input id="input-street" type="text" id ="fname" name="fname"></input>
+                </div>
+                <div class="phone">
+                    <label for="phone">Phone:</label>
+                    <input id="input-phone" type="text" id ="cname" name="cname"></input>
+                </div>
+                <div class="title">
+                    <label for="cname">Job title:</label>
+                    <input id="input-job-title" type="text" id ="cname" name="cname"></input>
+                </div>
+                <div class="city">
+                    <label for="cname">City:</label>
+                    <input id="input-city" type="text" id ="cname" name="cname"></input>
+                </div>
+                <div class="state">
+                    <label for="cname">State:</label>
+                    <input id="input-state" type="text" id ="cname" name="cname"></input>
+                </div>
+                <div class="fax">
+                    <label for="fax">Fax:</label>
+                    <input id="input-fax" type="text" id ="cname" name="cname"></input>
+                </div>
+                <div class="email">
+                    <label for="cname">Email:</label>
+                    <input id="input-email" type="text" id ="cname" name="cname"></input>
+                </div>
+                <div class="zip">
+                    <label for="cname">Zip:</label>
+                    <input id="input-zip" type="text" id ="cname" name="cname"></input>
+                </div>
+            </form>
+            <!-- Buttons -->
+            <div class="controls">
+                <button id="btnPreview">Preview</button>
+                <button id="btnLoad" data-toggle="modal">Load</button>
+                <button id="btnSave">Save</button>
+                <button id="btnDownload">Download</button>
+            </div>
+            <!-- Modal -->
+            <div class="modal" id = "loadModal">
+                <div class="modal-content">
+                  <span class="close-btn">&times;</span>
+                  <div class = "form-container" id = "modal-form">
+                      <div>
+                          <label id = "modal-text" for = "searchKey">Reference Number:</label>
+                          <input id="input-search-key" type="text"></input> 
+                      </div>
+                      <div class = "controls" class = "zip">
+                          <button id = "modalButton">Search</button>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal" id = "saveModal">
+                <div class="modal-content">
+                  <span class="close-btn">&times;</span>
+                    <div>
+                        <label id = "save-modal-text"> </label>
+                    </div>
+                </div>
+              </div>
+              
+              </div>
+        </main>
+        <footer class="bottom-nav">
+            &copy 2020 EzBiz
+        </footer>
+        <!-- JS -->
+        <script src="js/main.js" async defer></script>
+    </body>
+</html>
